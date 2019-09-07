@@ -14,6 +14,7 @@ public class PlayerMove : MonoBehaviour
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
+    public Transform host;
 
     private Vector3 moveDirection = Vector3.zero;
 
@@ -28,7 +29,6 @@ public class PlayerMove : MonoBehaviour
         {
             // We are grounded, so recalculate
             // move direction directly from axes
-
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
             moveDirection *= speed;
 
@@ -45,5 +45,17 @@ public class PlayerMove : MonoBehaviour
 
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+        if (host != null)
+            host.transform.position = transform.position;
+    }
+
+    void OnCollisonEnter(Collision collision)
+    {
+        if(collision.transform.GetComponent<Host>() != null)
+        {
+            host = collision.transform;
+            host.parent = transform;
+            host.transform.position = transform.position;
+        }
     }
 }

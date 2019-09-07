@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Host : MonoBehaviour
 {
+    //public Transform target;
     public float speed = 1;
     public float jumpHeight = 2;
-    public float size = 0;
+    public float size = 1;
     public bool water = true;
+    //public bool hosting;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,11 @@ public class Host : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+
     }
 }
