@@ -7,20 +7,21 @@ using System.Collections;
 // Make sure to attach a character controller to the same game object.
 // It is recommended that you make only one call to Move or SimpleMove per frame.
 
-public class PlayerMove : MonoBehaviour
+public class Player : MonoBehaviour
 {
     CharacterController characterController;
 
-    public float speed = 6.0f;
+    public float speed = 3.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
-    public Transform host;
+    public Host host;
 
     private Vector3 moveDirection = Vector3.zero;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        
     }
 
     void Update()
@@ -49,13 +50,14 @@ public class PlayerMove : MonoBehaviour
             host.transform.position = transform.position;
     }
 
-    void OnCollisonEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.transform.GetComponent<Host>() != null)
+        if(other.transform.GetComponent<Host>() != null)
         {
-            host = collision.transform;
-            host.parent = transform;
-            host.transform.position = transform.position;
+            host = other.transform.GetComponent<Host>();
+            transform.position = host.transform.position;
+            speed = host.speed;
         }
+        
     }
 }
