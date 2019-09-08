@@ -47,7 +47,11 @@ public class Player : MonoBehaviour
         // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
         if (host != null)
+        {
             host.transform.position = transform.position;
+            if (Input.GetKey(KeyCode.E))
+                host = null;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
