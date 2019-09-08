@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Animal { Bear, Deer, Rabbit, Fish };
+
 public class Host : MonoBehaviour
 {
     public float size;
     public bool water;
-    public float speed = 1.0f;
-
-    private Vector3 moveDirection = Vector3.zero;
+    public float speed;
+    public float jumpSpeed;
+    public Animal type;
 
     // Start is called before the first frame update
     void Start()

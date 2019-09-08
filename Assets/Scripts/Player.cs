@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
 {
     CharacterController characterController;
 
-    public float speed = 3.0f;
-    public float jumpSpeed = 8.0f;
+    public float speed = 4.0f;
+    public float jumpSpeed = 6.0f;
     public float gravity = 20.0f;
     public Host host;
 
@@ -57,6 +57,8 @@ public class Player : MonoBehaviour
             host = other.transform.GetComponent<Host>();
             transform.position = host.transform.position;
             speed = host.speed;
+            jumpSpeed = host.jumpSpeed;
+
         }
         
     }
