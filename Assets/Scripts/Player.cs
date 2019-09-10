@@ -11,8 +11,8 @@ public class Player : MonoBehaviour
 {
     CharacterController characterController;
 
-    public float speed = 4.0f;
-    public float jumpSpeed = 6.0f;
+    public float speed = 3.0f;
+    public float jumpSpeed = 3.0f;
     public float gravity = 20.0f;
     public Host host;
 
@@ -48,9 +48,16 @@ public class Player : MonoBehaviour
         characterController.Move(moveDirection * Time.deltaTime);
         if (host != null)
         {
-            host.transform.position = transform.position;
+            //host.transform.position = transform.position;
+            host.transform.SetPositionAndRotation(new Vector3(transform.position.x,
+                transform.position.y+host.yOffset, transform.position.z), host.transform.rotation);
+
             if (Input.GetKey(KeyCode.E))
+            {
                 host = null;
+                speed = 4.0f;
+                jumpSpeed = 6.0f;
+            }
         }
     }
 

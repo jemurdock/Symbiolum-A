@@ -10,6 +10,7 @@ public class Host : MonoBehaviour
     public bool water;
     public float speed;
     public float jumpSpeed;
+    public float yOffset;
     public Animal type;
 
     // Start is called before the first frame update
