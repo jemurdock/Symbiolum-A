@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1526980366}
-  m_IndirectSpecularColor: {r: 0.2850269, g: 0.3713935, b: 0.49601045, a: 1}
+  m_IndirectSpecularColor: {r: 0.28502658, g: 0.37139314, b: 0.49600914, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -208,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230114873}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 254.82, y: -172.89, z: 191.99}
+  m_LocalPosition: {x: 234, y: -172.89, z: 199}
   m_LocalScale: {x: 21.497765, y: 8.738928, z: 8.738928}
   m_Children: []
   m_Father: {fileID: 0}
@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 2
   water: 1
-  speed: 3
+  speed: 30
   jumpSpeed: 0
   yOffset: 0.25
   type: 0
@@ -337,7 +337,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242942122}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 231.12, y: -178.76, z: 124.87}
+  m_LocalPosition: {x: 231.12, y: -178.87, z: 124.87}
   m_LocalScale: {x: 3.4893618, y: 3.4893618, z: 3.4893618}
   m_Children: []
   m_Father: {fileID: 0}
@@ -355,9 +355,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c9802667c53419092ca0419662bdb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  jumpSpeed: 3
-  gravity: 20
+  speed: 30
+  jumpSpeed: 20
+  gravity: 60
   host: {fileID: 0}
 --- !u!143 &242942128
 CharacterController:
@@ -515,7 +515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_LocalRotation: {x: 0.00565188, y: 0.0000000040316728, z: -0.0066505857, w: -0.9999619}
-  m_LocalPosition: {x: 4.9, y: 1.11, z: 12.04}
+  m_LocalPosition: {x: 230, y: -170, z: 101}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1181,8 +1181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 0
   water: 0
-  speed: 5
-  jumpSpeed: 9
+  speed: 50
+  jumpSpeed: 60
   yOffset: 0
   type: 2
 --- !u!136 &1372082427
@@ -1254,7 +1254,7 @@ Transform:
   m_GameObject: {fileID: 1372082425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 275.69, y: -253.85, z: 470.96}
-  m_LocalScale: {x: 2.776871, y: 1.442751, z: 2.776871}
+  m_LocalScale: {x: 4.158046, y: 2.1603541, z: 4.158046}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -1361,7 +1361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1526980365}
   m_LocalRotation: {x: 0.7064338, y: 0.47771442, z: 0.030843567, w: 0.5213338}
-  m_LocalPosition: {x: 0, y: 3.43, z: 3.789}
+  m_LocalPosition: {x: 163, y: 79, z: 317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1530,7 +1530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739203264}
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 230.89, y: -175.9, z: 129.94}
+  m_LocalPosition: {x: 246.48, y: -176.32, z: 134.82}
   m_LocalScale: {x: 3.7137299, y: 2.4266996, z: 3.7137299}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1550,8 +1550,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 1
   water: 0
-  speed: 6
-  jumpSpeed: 6
+  speed: 60
+  jumpSpeed: 40
   yOffset: 0.15
   type: 1
 --- !u!1 &1903246400

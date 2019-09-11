@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Animal { Bear, Deer, Rabbit, Fish };
+public enum Animal { Bear, Deer, Rabbit, Fish, Fox };
 
 public class Host : MonoBehaviour
 {
