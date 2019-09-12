@@ -11,9 +11,9 @@ public class Player : MonoBehaviour
 {
     CharacterController characterController;
 
-    public float speed = 3.0f;
-    public float jumpSpeed = 3.0f;
-    public float gravity = 20.0f;
+    public float speed = 30.0f;
+    public float jumpSpeed = 20.0f;
+    public float gravity = 50.0f;
     public Host host;
 
     private Vector3 moveDirection = Vector3.zero;
@@ -55,8 +55,8 @@ public class Player : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 host = null;
-                speed = 4.0f;
-                jumpSpeed = 6.0f;
+                speed = 30.0f;
+                jumpSpeed = 20.0f;
             }
         }
     }
