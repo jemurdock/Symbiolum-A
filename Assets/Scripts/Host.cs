@@ -12,6 +12,7 @@ public class Host : MonoBehaviour
     public float jumpSpeed;
     public float yOffset;
     public float xOffset;
+    public float zOffset;
     public Animal type;
     public bool skill_active;
 
