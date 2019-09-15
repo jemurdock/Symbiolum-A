@@ -13,15 +13,16 @@ public class Player : MonoBehaviour
 
     public float speed = 30.0f;
     public float jumpSpeed = 20.0f;
-    public float gravity = 50.0f;
+    public float gravity = 60.0f;
     public Host host;
+    public float horizontalSpeed = 2.0F;
+    public float verticalSpeed = 2.0F;
 
     private Vector3 moveDirection = Vector3.zero;
 
     void Start()
     {
-        characterController = GetComponent<CharacterController>();
-        
+        characterController = GetComponent<CharacterController>();     
     }
 
     void Update()
@@ -43,13 +44,12 @@ public class Player : MonoBehaviour
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
         // as an acceleration (ms^-2)
         moveDirection.y -= gravity * Time.deltaTime;
-
-        // Move the controller
         characterController.Move(moveDirection * Time.deltaTime);
+
         if (host != null)
         {
             //host.transform.position = transform.position;
-            host.transform.SetPositionAndRotation(new Vector3(transform.position.x,
+            host.transform.SetPositionAndRotation(new Vector3(transform.position.x+host.xOffset,
                 transform.position.y+host.yOffset, transform.position.z), host.transform.rotation);
 
             if (Input.GetKey(KeyCode.E))
@@ -63,14 +63,13 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.GetComponent<Host>() != null)
+        if (other.transform.GetComponent<Host>() != null)
         {
             host = other.transform.GetComponent<Host>();
-            transform.position = host.transform.position;
+            host.transform.position = transform.position;
             speed = host.speed;
             jumpSpeed = host.jumpSpeed;
 
-        }
-        
+        }     
     }
 }
