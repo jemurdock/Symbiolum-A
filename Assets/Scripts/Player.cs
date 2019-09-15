@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
         if (host != null)
         {
             //host.transform.position = transform.position;
-            host.transform.SetPositionAndRotation(new Vector3(transform.position.x,
+            host.transform.SetPositionAndRotation(new Vector3(transform.position.x+host.xOffset,
                 transform.position.y+host.yOffset, transform.position.z), host.transform.rotation);
 
             if (Input.GetKey(KeyCode.E))
@@ -66,7 +66,7 @@ public class Player : MonoBehaviour
         if (other.transform.GetComponent<Host>() != null)
         {
             host = other.transform.GetComponent<Host>();
-            transform.position = host.transform.position;
+            host.transform.position = transform.position;
             speed = host.speed;
             jumpSpeed = host.jumpSpeed;
 
