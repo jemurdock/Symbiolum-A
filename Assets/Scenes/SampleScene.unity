@@ -2357,7 +2357,7 @@ GameObject:
   - component: {fileID: 1739203265}
   - component: {fileID: 1739203269}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Fox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
