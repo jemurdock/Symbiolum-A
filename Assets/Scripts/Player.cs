@@ -58,7 +58,27 @@ public class Player : MonoBehaviour
                 speed = 30.0f;
                 jumpSpeed = 20.0f;
             }
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (host.skill_active)
+                {
+                    transform.GetComponent<MeshRenderer>().enabled = true;
+                    transform.GetComponent<SphereCollider>().enabled = true;
+                    host.deactivate();
+                }
+                else
+                {
+                    if (host.type == Animal.Fox)
+                    {
+                        transform.GetComponent<MeshRenderer>().enabled = false;
+                        transform.GetComponent<SphereCollider>().enabled = false;
+                    }
+                    host.activate();
+                }
+                    
+            }
         }
+
     }
 
     private void OnTriggerEnter(Collider other)

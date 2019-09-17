@@ -26,17 +26,10 @@ public class Host : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (skill_active)
-                deactivate();
-            else
-                activate();
-        }
 
     }
 
-    private void activate()
+    public void activate()
     {
         switch (type)
         {
@@ -54,7 +47,7 @@ public class Host : MonoBehaviour
         skill_active = true;
     }
 
-    private void deactivate()
+    public void deactivate()
     {
         switch (type)
         {
@@ -62,7 +55,7 @@ public class Host : MonoBehaviour
                 break;
             case Animal.Fox:
                 transform.GetComponent<ParticleSystem>().Stop();
-                transform.GetComponent<CapsuleCollider>().enabled = true;
+                transform.GetComponent<CapsuleCollider>().enabled = true;              
                 break;
             case Animal.Fish:
                 break;
