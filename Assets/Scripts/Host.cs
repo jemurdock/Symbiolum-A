@@ -19,24 +19,16 @@ public class Host : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (type == Animal.Fox)
-            transform.GetComponent<ParticleSystem>().Stop();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (skill_active)
-                deactivate();
-            else
-                activate();
-        }
 
     }
 
-    private void activate()
+    public void activate()
     {
         switch (type)
         {
@@ -45,6 +37,12 @@ public class Host : MonoBehaviour
             case Animal.Fox:
                 transform.GetComponent<ParticleSystem>().Play();
                 transform.GetComponent<CapsuleCollider>().enabled = false;
+                GameObject[] logs = GameObject.FindGameObjectsWithTag("Log");
+                foreach (GameObject l in logs)
+                {
+                    l.GetComponent<CapsuleCollider>().enabled = false;
+                }
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
                 break;
             case Animal.Fish:
                 break;
@@ -54,7 +52,7 @@ public class Host : MonoBehaviour
         skill_active = true;
     }
 
-    private void deactivate()
+    public void deactivate()
     {
         switch (type)
         {
@@ -63,6 +61,12 @@ public class Host : MonoBehaviour
             case Animal.Fox:
                 transform.GetComponent<ParticleSystem>().Stop();
                 transform.GetComponent<CapsuleCollider>().enabled = true;
+                GameObject[] logs = GameObject.FindGameObjectsWithTag("Log");
+                foreach(GameObject l in logs)
+                {
+                    l.GetComponent<CapsuleCollider>().enabled = true;
+                }
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = true;
                 break;
             case Animal.Fish:
                 break;

@@ -58,18 +58,43 @@ public class Player : MonoBehaviour
                 speed = 30.0f;
                 jumpSpeed = 20.0f;
             }
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (host.skill_active)
+                {
+                    transform.GetComponent<MeshRenderer>().enabled = true;
+                    transform.GetComponent<SphereCollider>().enabled = true;
+                    host.deactivate();
+                }
+                else
+                {
+                    if (host.type == Animal.Fox)
+                    {
+                        transform.GetComponent<MeshRenderer>().enabled = false;
+                        transform.GetComponent<SphereCollider>().enabled = false;
+                    }
+                    host.activate();
+                }
+                    
+            }
         }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.GetComponent<Host>() != null)
         {
+            if(host != null && host.skill_active)
+            {
+                return;
+            }
             host = other.transform.GetComponent<Host>();
             host.transform.SetPositionAndRotation(new Vector3(transform.position.x + host.xOffset,
       transform.position.y + host.yOffset, transform.position.z + host.zOffset), host.transform.rotation);
             speed = host.speed;
             jumpSpeed = host.jumpSpeed;
+            host.skill_active = false;
 
         }     
     }
