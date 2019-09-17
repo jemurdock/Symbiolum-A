@@ -19,8 +19,7 @@ public class Host : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (type == Animal.Fox)
-            transform.GetComponent<ParticleSystem>().Stop();
+
     }
 
     // Update is called once per frame
@@ -38,6 +37,7 @@ public class Host : MonoBehaviour
             case Animal.Fox:
                 transform.GetComponent<ParticleSystem>().Play();
                 transform.GetComponent<CapsuleCollider>().enabled = false;
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
                 break;
             case Animal.Fish:
                 break;
@@ -55,7 +55,8 @@ public class Host : MonoBehaviour
                 break;
             case Animal.Fox:
                 transform.GetComponent<ParticleSystem>().Stop();
-                transform.GetComponent<CapsuleCollider>().enabled = true;              
+                transform.GetComponent<CapsuleCollider>().enabled = true;
+                transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = true;
                 break;
             case Animal.Fish:
                 break;
