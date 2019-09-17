@@ -43,13 +43,13 @@ public class Host : MonoBehaviour
                     l.GetComponent<CapsuleCollider>().enabled = false;
                 }
                 transform.GetChild(0).GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+                skill_active = true;
                 break;
             case Animal.Fish:
                 break;
             case Animal.Rabbit:
                 break;
         }
-        skill_active = true;
     }
 
     public void deactivate()
