@@ -85,11 +85,16 @@ public class Player : MonoBehaviour
     {
         if (other.transform.GetComponent<Host>() != null)
         {
+            if(host != null && host.skill_active)
+            {
+                return;
+            }
             host = other.transform.GetComponent<Host>();
             host.transform.SetPositionAndRotation(new Vector3(transform.position.x + host.xOffset,
       transform.position.y + host.yOffset, transform.position.z + host.zOffset), host.transform.rotation);
             speed = host.speed;
             jumpSpeed = host.jumpSpeed;
+            host.skill_active = false;
 
         }     
     }
